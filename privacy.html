@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oakhall, Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; --ink:#1a1a1a; --dim:#5a5a5a; --line:#e2e2e2; --bg:#fff; --accent:#00204e; --warn:#8a4b00; --warnbg:#fff8ed; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#e8e8e8; --dim:#a0a0a0; --line:#333; --bg:#161616; --accent:#9db9e8; --warn:#e8b878; --warnbg:#2a2113; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+  h1 { font-size: 1.9rem; line-height:1.2; margin:0 0 .25rem; letter-spacing:-.02em; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; letter-spacing:-.01em; }
+  .updated { color: var(--dim); font-size:.9rem; margin: 0 0 2rem; }
+  .lede { font-size:1.05rem; border-left:3px solid var(--accent); padding-left:1rem; margin:0 0 1rem; }
+  table { width:100%; border-collapse: collapse; margin: .8rem 0; font-size:.92rem; }
+  th, td { text-align:left; padding:.55rem .5rem; border-bottom:1px solid var(--line); vertical-align: top; }
+  th { color: var(--dim); font-weight:600; font-size:.8rem; text-transform:uppercase; letter-spacing:.04em; }
+  code { font:.88em ui-monospace, SFMono-Regular, Menlo, monospace;
+         background:color-mix(in srgb, var(--ink) 8%, transparent); padding:.1em .35em; border-radius:4px; }
+  .note { background:var(--warnbg); border:1px solid color-mix(in srgb, var(--warn) 35%, transparent);
+          border-radius:8px; padding:.9rem 1.1rem; margin:1rem 0; }
+  .note strong { color: var(--warn); }
+  ul { padding-left: 1.2rem; }
+  li { margin:.3rem 0; }
+  footer { margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); color:var(--dim); font-size:.88rem; }
+  a { color: var(--accent); }
+  .wrap { overflow-x:auto; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Oakhall, Privacy Policy</h1>
+<p class="updated">Last updated 22 September 2026</p>
+
+<p class="lede">Oakhall has no account system, no analytics, no payments, and no server
+run by its developer. Almost everything it knows about you stays on your phone. The exceptions
+are listed below, in full.</p>
+
+<p><strong>Oakhall is not affiliated with, endorsed by, or operated by the University
+of Toronto.</strong> It is an independent app that signs in to U of T's own services on your
+behalf, using your own credentials, at your request.</p>
+
+<h2>Your UTORid password</h2>
+
+<p>The app never sees it. Signing in happens inside a web view showing <em>U of T's own login
+page</em>, served from U of T's servers over an encrypted connection. The app draws a frame
+around that page; it does not read the fields, and it has no code that could. Nothing types
+your password, stores it, or transmits it anywhere.</p>
+
+<p>What the app keeps afterwards is the <strong>session</strong>, the same cookies a browser
+keeps after you log in. They live on your phone and are sent only back to
+<code>utoronto.ca</code>.</p>
+
+<h2>What is stored on your phone</h2>
+
+<div class="wrap">
+<table>
+  <tr><th>What</th><th>Where</th><th>Leaves the phone?</th></tr>
+  <tr><td>Quercus access token</td><td>Keychain, this device only, excluded from backups</td><td>Sent only to <code>q.utoronto.ca</code></td></tr>
+  <tr><td>U of T session cookies</td><td>The app's web view storage</td><td>Sent only to <code>utoronto.ca</code></td></tr>
+  <tr><td>Your Anthropic API key, if you add one</td><td>Keychain, this device only</td><td>Sent only to <code>api.anthropic.com</code></td></tr>
+  <tr><td>Your timetable</td><td>A file in the app's storage</td><td>No, except to your own private iCloud, if you share it with a friend</td></tr>
+  <tr><td>Assignments and due dates</td><td>A file in the app's storage</td><td>No</td></tr>
+  <tr><td>Course details, watchlist</td><td>A file in the app's storage</td><td>Course codes are looked up against U of T's public timetable</td></tr>
+  <tr><td>Your location</td><td>Held only in memory, while the app runs</td><td><strong>Only if you turn on location sharing</strong>, and only to the friends you name, and only while you're on campus. Off by default, listed below</td></tr>
+  <tr><td>Reminders and notifications</td><td>Scheduled with iOS on your device</td><td>No, they are local notifications, not push</td></tr>
+</table>
+</div>
+
+<h2>Services the app contacts</h2>
+
+<p>All of these are contacted directly by your phone. None of them report back to the
+developer.</p>
+
+<ul>
+  <li><strong>U of T</strong>, <code>acorn.utoronto.ca</code>, <code>q.utoronto.ca</code>, and the
+      login provider <code>idpz.utorauth.utoronto.ca</code>, to read your own timetable and coursework.</li>
+  <li><strong>Duo Security</strong> and <strong>Instructure</strong> (<code>sso.canvaslms.com</code>), part of U of T's own sign-in; they see what they would see if you signed in with a browser.</li>
+  <li><strong>U of T Timetable Builder</strong> (<code>api.easi.utoronto.ca</code>), a public course
+      catalogue. Requests carry a course code and no identity.</li>
+  <li><strong>Concept3D</strong> (<code>assets.concept3d.com</code>), campus photos, loaded only when
+      you open a place that has one.</li>
+  <li><strong>Anthropic</strong> (<code>api.anthropic.com</code>), only if you add your own API key and
+      use the Assistant. Your question and relevant context are sent under your own account.</li>
+  <li><strong>Apple CloudKit</strong>, for Friends: your username, who you are connected to, and, only if you turn it on, your position while you are on campus.</li>
+</ul>
+
+<h2>Friends</h2>
+
+<p>Friends is built on Apple's CloudKit, under your own iCloud account. There is no server
+belonging to the developer anywhere in it. Two different things are stored in two different
+places, and the difference is the important part:</p>
+
+<div class="wrap">
+<table>
+  <tr><th>What</th><th>Where</th><th>Who can read it</th></tr>
+  <tr><td>Your profile: username, name, photo, bio, and who you are connected to</td><td>CloudKit's <em>public</em> database</td><td>Anyone who knows your username, and the developer through Apple's CloudKit dashboard</td></tr>
+  <tr><td><strong>Your timetable</strong></td><td>Your own <em>private</em> CloudKit database</td><td>Only the friends you share it with. Not the developer</td></tr>
+</table>
+</div>
+
+<p>Sharing uses Apple's own sharing mechanism: your schedule stays in your private database,
+and each friend is named on it individually by Apple. Someone who is not on the list cannot
+read it, that is enforced by Apple, not by this app being careful.</p>
+
+<div class="note">
+<p><strong>What is still visible to the developer:</strong> your chosen handle and your
+friend list. Not your schedule, not your classes, not where you are. The handle is not
+anonymous if you pick your own name for it, and none of it is end-to-end encrypted.
+It is not sold, analysed, or used for anything, but "the developer cannot see any of it"
+would be untrue, so it is not claimed.</p>
+</div>
+
+<p><strong>Your profile is public.</strong> The name, photo and one-line bio you choose are
+visible to anyone who knows your username, and to the developer. That is what they are for:
+a handle with no face is a hard thing to trust before you share your week with it. Leave them
+blank and the app shows your initials instead. Your timetable and your location are not part
+of your profile and are never public.</p>
+
+<p><strong>Reporting.</strong> If someone's photo or bio is offensive, impersonates someone,
+or is spam, you can report it from their profile. Reports are not anonymous to the developer
+and are not shown to the person reported. Removing someone cuts off everything you share with
+them immediately.</p>
+
+<p>Within Friends:</p>
+<ul>
+  <li>You choose a username. It is a handle you pick, not your UTORid, and not your legal name unless you make it one.</li>
+  <li>New friends see <strong>busy times only</strong>, when you are free, with no course names or rooms, unless you deliberately promote them to see your full timetable. The two versions are stored separately; a busy-only friend is not shown a filtered copy of the full one, they are given a different record that never had the course names in it.</li>
+  <li>Removing a friend, or reducing what they can see, takes them off that share. Their access ends there and then, at Apple's level.</li>
+  <li>If you never use Friends, none of this data is ever created.</li>
+</ul>
+
+<h2>Location</h2>
+
+<p>Location does two different things in this app, and only one of them ever leaves your
+phone.</p>
+
+<p><strong>On the map, and for walking times.</strong> Showing where you are on the campus map
+and working out the real walk to your next class both happen entirely on your device. Nothing
+about that is transmitted, to the developer or to anyone else. Refuse the permission and the
+rest of the app works normally.</p>
+
+<p><strong>Sharing your location with friends.</strong> This is off until you turn it on, and
+it is the only thing in this app that sends your position anywhere.</p>
+
+<div class="note">
+<p><strong>If you turn location sharing on:</strong></p>
+<ul>
+  <li><strong>Only the friends you pick.</strong> Nobody can see you until you select them by
+      name, one at a time. Turning someone off takes effect immediately, and they are not told.</li>
+  <li><strong>Only while you're on campus.</strong> Your phone works out whether you're on
+      campus before anything is sent. Off campus, nothing is transmitted at all, and what was
+      previously shared is <em>deleted</em>, not hidden. Your friends see "not on campus", not
+      the spot where you left.</li>
+  <li><strong>Your position, and the building you're in.</strong> Friends you have chosen see
+      where you are on the campus map, labelled with the building you're in when you're in one.
+      This is a precise position, it is meant for finding each other, and it is why it only
+      works on campus, only for people you name, and only while you leave it switched on.</li>
+  <li><strong>No history is kept.</strong> There is one current position per person, overwritten
+      each time it updates and dropped after two hours. There is no trail of where you have
+      been, not on your phone, not in the cloud, and not available to the developer, because
+      it is never recorded in the first place.</li>
+  <li><strong>As you move, roughly every 50 metres.</strong> Enough to tell one building from
+      the next. This uses battery while it is switched on, which is part of why it is off by
+      default and why turning it off stops the app using location in the background at all.</li>
+  <li><strong>Turning it off is one switch</strong>, at the top of Friends &rarr; My location,
+      and it stops sharing straight away.</li>
+</ul>
+<p>Your position is stored in Apple's CloudKit while it is being shared. Friends you have
+selected can read it; it is deleted when you leave campus, pause sharing, or two hours pass.</p>
+</div>
+
+<p>This app is not a location tracker and is not designed to be used as one. It will not show
+where someone lives, where they work, or where they were yesterday, because it does not collect
+any of that.</p>
+
+<h2>Analytics and tracking</h2>
+
+<p>There are none. No analytics SDK, no crash reporter, no advertising identifier, no
+third-party trackers, and no profile of you anywhere. The app does not track you across apps
+or websites.</p>
+
+<h2>Age</h2>
+
+<p>Oakhall is intended for university students. It is not directed at children and does
+not knowingly collect information from them.</p>
+
+<p><strong>Location sharing is for students 18 and over.</strong> By turning it on you
+confirm you are 18 or older. This is a condition of use, not something the app checks. We do
+not ask your age and we do not ask for identification, and we would rather say so plainly
+than imply a verification that does not happen.</p>
+
+<p>Everything else in the app, your timetable, assignments, the campus map, Eats, the
+waitlist watcher and your friends list, works the same at any age.</p>
+
+<h2>Deleting your data</h2>
+
+<p>In the app: <strong>Account &amp; Privacy → Erase all my data</strong>. It removes every
+saved credential, your timetable, assignments, watchlist, friends data and all scheduled
+reminders, and signs you out of U of T.</p>
+
+<p>Deleting the app removes its files, but <em>keychain items can survive a reinstall</em>, so
+use Erase first if that matters to you.</p>
+
+<p>Two things live outside the app and must be removed separately:</p>
+<ul>
+  <li><strong>The Quercus access token.</strong> It is registered on your U of T account. Remove it at
+      Quercus → Account → Settings → Approved Integrations, where it appears as "Oakhall app".</li>
+  <li><strong>Friends data in CloudKit.</strong> Removing your friends and signing out clears what the
+      app wrote. Your schedule lives in your own iCloud account, so deleting the app's data in
+      <strong>Settings → [your name] → iCloud → Manage Account Storage</strong> removes it too.
+      To have any remainder in the public database deleted, contact the address below.</li>
+</ul>
+
+<h2>Changes</h2>
+
+<p>If this policy changes in a way that affects what is collected or where it goes, the date at
+the top changes and the change is described in the app's release notes.</p>
+
+<footer>
+  <p><strong>Contact:</strong> <a href="mailto:lucasnadon3132@gmail.com">lucasnadon3132@gmail.com</a></p>
+  <p>Campus map data © OpenStreetMap contributors, and campus information from
+     map.utoronto.ca. Oakhall is an independent project and is not affiliated with the
+     University of Toronto.</p>
+</footer>
+
+</main>
+</body>
+</html>

@@ -3,7 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Oakhall, Privacy Policy</title>
+<title>Skeeto, Privacy Policy</title>
+<!-- Written from the code on 2026-10-02 (skeeto/src, supabase/schema.sql,
+     supabase/functions, ml/). Every claim here should be checkable there; if the
+     code changes what is collected, where it goes or how long it is kept, this
+     page changes in the same commit. docs/DATA_INVENTORY.md is the internal
+     inventory behind it. -->
 <style>
   :root { color-scheme: light dark; --ink:#1a1a1a; --dim:#5a5a5a; --line:#e2e2e2; --bg:#fff; --accent:#00204e; --warn:#8a4b00; --warnbg:#fff8ed; }
   @media (prefers-color-scheme: dark) {
@@ -15,6 +20,7 @@
   main { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
   h1 { font-size: 1.9rem; line-height:1.2; margin:0 0 .25rem; letter-spacing:-.02em; }
   h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; letter-spacing:-.01em; }
+  h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
   .updated { color: var(--dim); font-size:.9rem; margin: 0 0 2rem; }
   .lede { font-size:1.05rem; border-left:3px solid var(--accent); padding-left:1rem; margin:0 0 1rem; }
   table { width:100%; border-collapse: collapse; margin: .8rem 0; font-size:.92rem; }
@@ -27,6 +33,9 @@
   .note strong { color: var(--warn); }
   ul { padding-left: 1.2rem; }
   li { margin:.3rem 0; }
+  nav.toc { font-size:.92rem; margin: 1.5rem 0 0; }
+  nav.toc ol { padding-left: 1.4rem; margin:.4rem 0 0; }
+  nav.toc li { margin:.15rem 0; }
   footer { margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); color:var(--dim); font-size:.88rem; }
   a { color: var(--accent); }
   .wrap { overflow-x:auto; }
@@ -35,199 +44,536 @@
 <body>
 <main>
 
-<h1>Oakhall, Privacy Policy</h1>
-<p class="updated">Last updated 22 September 2026</p>
+<h1>Skeeto, Privacy Policy</h1>
+<p class="updated">Last updated 2 October 2026</p>
 
-<p class="lede">Oakhall has no account system, no analytics, no payments, and no server
-run by its developer. Almost everything it knows about you stays on your phone. The exceptions
-are listed below, in full.</p>
+<p class="lede">Your timetable, assignments, grades and reminders stay on your phone, and they
+work without an account. A Skeeto account is optional. You need one for the Feed, Friends
+and messages, and what it stores is kept on Skeeto's server in Canada. If you have an
+account, your courses, program and year are used to personalise your Feed, to add you to your
+course communities, and to show on your profile, and you can't switch this off. Some
+processing happens in the United States; the details are below. Skeeto doesn't sell your
+data, doesn't show ads, and doesn't track you across other apps or websites.</p>
 
-<p><strong>Oakhall is not affiliated with, endorsed by, or operated by the University
-of Toronto.</strong> It is an independent app that signs in to U of T's own services on your
-behalf, using your own credentials, at your request.</p>
+<p><strong>Skeeto is not affiliated with, endorsed by, or operated by the University of
+Toronto.</strong> It is an independent app. When you ask it to, it signs in to U of T's own
+services (ACORN and Quercus) using your own UTORid, on U of T's own sign-in page. Until
+September 2026 it was called Oakhall. It is the same app from the same developer.</p>
 
-<h2>Your UTORid password</h2>
+<nav class="toc" aria-label="Contents">
+  <strong>Contents</strong>
+  <ol>
+    <li><a href="#who">Who we are</a></li>
+    <li><a href="#collect">What Skeeto collects</a></li>
+    <li><a href="#phone">What stays only on your phone</a></li>
+    <li><a href="#use">How it is used</a></li>
+    <li><a href="#moderation">Automated moderation and human review</a></li>
+    <li><a href="#sharing">Who sees it, and who it is shared with</a></li>
+    <li><a href="#where">Where it is stored and processed</a></li>
+    <li><a href="#retention">How long it is kept</a></li>
+    <li><a href="#rights">Your choices and rights</a></li>
+    <li><a href="#security">Security</a></li>
+    <li><a href="#children">Children</a></li>
+    <li><a href="#changes">Changes to this policy</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</nav>
 
-<p>The app never sees it. Signing in happens inside a web view showing <em>U of T's own login
-page</em>, served from U of T's servers over an encrypted connection. The app draws a frame
-around that page; it does not read the fields, and it has no code that could. Nothing types
-your password, stores it, or transmits it anywhere.</p>
+<h2 id="who">1. Who we are</h2>
 
-<p>What the app keeps afterwards is the <strong>session</strong>, the same cookies a browser
-keeps after you log in. They live on your phone and are sent only back to
-<code>utoronto.ca</code>.</p>
+<p>Skeeto is made and run by <strong>Lucas Nadon</strong>, an individual developer in Canada
+(referred to below as "Skeeto", "we" or "the developer"). He is responsible for the personal
+information Skeeto handles, and he is the person to contact about it, at
+<a href="mailto:lucasnadon3132@gmail.com">lucasnadon3132@gmail.com</a>.</p>
 
-<h2>What is stored on your phone</h2>
+<p>This policy covers the Skeeto app for iPhone and the server it uses. It is written to meet
+Canada's federal privacy law (PIPEDA) and, for people in Quebec, Quebec's private-sector privacy
+law (as amended by Law 25).</p>
+
+<h2 id="collect">2. What Skeeto collects</h2>
+
+<p>If you never make an account, Skeeto's server stores nothing about you, apart from
+short-term <a href="#device">technical logs</a>. In that case, besides your own sign-in to U of
+T, only two kinds of thing leave your phone. One is anonymous usage analytics, which you can turn
+off (see <a href="#analytics">Usage analytics</a>). The other is requests for public information,
+such as campus map and food data from Skeeto's server, campus photos, and U of T's public course
+timetable. Those requests don't include anything about you.</p>
+
+<p>If you do make an account, this is everything Skeeto's server stores about you.</p>
+
+<h3 id="account">Your account</h3>
+<ul>
+  <li><strong>How you sign in.</strong> Sign in with Apple, Google, or a six-digit code sent to
+      your email. We store your email address (with Sign in with Apple this may be a private
+      relay address) and the ID Apple or Google uses for you. If Apple or Google gives us your
+      name, we store it as a suggestion for your display name.</li>
+  <li><strong>A record that you accepted the posting terms</strong>, with the version and the
+      time.</li>
+</ul>
+
+<h3 id="profile">Your profile</h3>
+<ul>
+  <li>Your username, display name, bio, social handles (Instagram, Snapchat, TikTok, Discord) if
+      you add them, a profile photo if you have one, your campus, and the date you joined.</li>
+  <li>Your <strong>program of study and year</strong>. These are filled in automatically from
+      ACORN (see the next section).</li>
+  <li>How many people follow you (your Broskeetos), how many you follow, and how many posts you
+      have.</li>
+</ul>
+
+<h3 id="courses">Your timetable, courses, program and year</h3>
+<ul>
+  <li><strong>Your enrolment:</strong> this term's course codes and sections, your program and
+      your year, as read from ACORN. It is uploaded only if you have an account. A new import
+      replaces it.</li>
+  <li><strong>Your course communities.</strong> You are added automatically to one community per
+      course you take (for example <code>MAT102H5</code>). Your membership is a record on the
+      server.</li>
+  <li><strong>Your week, for Friends.</strong> When you open the Friends tab while signed in,
+      your current term's timetable is uploaded in two copies. One has times only (when you're
+      busy). The other has the full details: course codes, sections, rooms and times.
+      <a href="#visibility">Who can read each copy</a> is explained below.</li>
+</ul>
+
+<h3 id="content">Posts, comments, messages and photos</h3>
+<ul>
+  <li><strong>Posts:</strong> text (up to 2,000 characters), up to four photos, an optional link,
+      and the community you posted in.</li>
+  <li><strong>Comments and replies</strong>, which can include one image.</li>
+  <li><strong>Likes, reposts and stickers</strong>, and posts you mark "Not interested".</li>
+  <li><strong>Communities you create:</strong> name, description and icon.</li>
+  <li><strong>Messages</strong> you send to and receive from people you're connected with,
+      one to one or in a group chat, when each one was sent, edited or deleted, and when each
+      member last read the conversation (this is what shows "Seen"). For a group chat we also
+      store its name, who is in it, who added them and who runs it. Messages are text only.
+      Everyone in a group chat can see its members and messages, except that people who have
+      blocked each other don't see each other's messages.</li>
+  <li><strong>Photos.</strong> Skeeto uses only the photos you choose or take for a post,
+      comment, sticker, community icon or profile photo. A profile photo, like every other image,
+      is checked by the automated image moderation described below before anyone else can see it;
+      until then only you see it. It never reads the rest of your library. Each photo is
+      resized and re-saved as a JPEG on your phone before it is uploaded.</li>
+  <li><strong>Reports you make</strong>: what you reported and the reason you gave.</li>
+</ul>
+
+<h3 id="graph">Your connections</h3>
+<ul>
+  <li>Who you follow, and who follows you.</li>
+  <li>Friend requests, connections, and who you have promoted to friend.</li>
+  <li>The communities you have joined, including course communities.</li>
+  <li>People you have blocked.</li>
+</ul>
+
+<h3 id="feedactivity">What you do in the Feed</h3>
+<p>To decide what to show you, Skeeto records what happens in your Feed, and links it to your
+account:</p>
+<ul>
+  <li>which posts were shown to you, where in the list they were, and what score the ranking gave
+      them;</li>
+  <li>how long you spent on each post, and whether you opened the full post or its comments;</li>
+  <li>what you liked or unliked, commented on, reposted or un-reposted, shared, or marked "Not
+      interested", and whose profiles you opened from a post;</li>
+  <li>where in the app each of these happened (the Feed, a community, a profile, search).</li>
+</ul>
+<p><strong>Feed search.</strong> What you type into search is sent to Skeeto's server so it can
+find matching posts and communities. It isn't stored or logged. It is used only to answer that
+search.</p>
+
+<h3 id="analytics">Usage analytics</h3>
+<p>Skeeto sends a small, fixed set of usage events to <strong>PostHog</strong>, an analytics
+service, so we can tell which features are actually used. This is <strong>on by
+default</strong>. You can turn it off at <strong>Account &rarr; Privacy &rarr; Help improve
+Skeeto</strong>. When it's off, nothing more is sent, and from the next time the app starts,
+the analytics library isn't started at all.</p>
 
 <div class="wrap">
 <table>
-  <tr><th>What</th><th>Where</th><th>Leaves the phone?</th></tr>
-  <tr><td>Quercus access token</td><td>Keychain, this device only, excluded from backups</td><td>Sent only to <code>q.utoronto.ca</code></td></tr>
-  <tr><td>U of T session cookies</td><td>The app's web view storage</td><td>Sent only to <code>utoronto.ca</code></td></tr>
-  <tr><td>Your Anthropic API key, if you add one</td><td>Keychain, this device only</td><td>Sent only to <code>api.anthropic.com</code></td></tr>
-  <tr><td>Your timetable</td><td>A file in the app's storage</td><td>No, except to your own private iCloud, if you share it with a friend</td></tr>
-  <tr><td>Assignments and due dates</td><td>A file in the app's storage</td><td>No</td></tr>
-  <tr><td>Course details, watchlist</td><td>A file in the app's storage</td><td>Course codes are looked up against U of T's public timetable</td></tr>
-  <tr><td>Your location</td><td>Held only in memory, while the app runs</td><td><strong>Only if you turn on location sharing</strong>, and only to the friends you name, and only while you're on campus. Off by default, listed below</td></tr>
-  <tr><td>Reminders and notifications</td><td>Scheduled with iOS on your device</td><td>No, they are local notifications, not push</td></tr>
+  <tr><th>Event</th><th>What is sent with it</th></tr>
+  <tr><td>You opened the app, or came back to it</td><td>Which tab you were on</td></tr>
+  <tr><td>You imported your timetable</td><td>How many courses were found, and that the source was ACORN. <strong>Not which courses</strong></td></tr>
+  <tr><td>You started walking directions to a class</td><td>The walk's distance and time. <strong>Not where from or where to</strong></td></tr>
+  <tr><td>You opened the Food panel</td><td>Nothing else</td></tr>
+  <tr><td>You started walking directions to a food outlet</td><td>Nothing else. <strong>Not which outlet</strong></td></tr>
 </table>
 </div>
 
-<h2>Services the app contacts</h2>
-
-<p>All of these are contacted directly by your phone. None of them report back to the
-developer.</p>
+<p>The app's code allows two more events, with no details attached: sending or accepting a
+friend request. The app doesn't currently send either of them.</p>
 
 <ul>
-  <li><strong>U of T</strong>, <code>acorn.utoronto.ca</code>, <code>q.utoronto.ca</code>, and the
-      login provider <code>idpz.utorauth.utoronto.ca</code>, to read your own timetable and coursework.</li>
-  <li><strong>Duo Security</strong> and <strong>Instructure</strong> (<code>sso.canvaslms.com</code>), part of U of T's own sign-in; they see what they would see if you signed in with a browser.</li>
-  <li><strong>U of T Timetable Builder</strong> (<code>api.easi.utoronto.ca</code>), a public course
-      catalogue. Requests carry a course code and no identity.</li>
-  <li><strong>Concept3D</strong> (<code>assets.concept3d.com</code>), campus photos, loaded only when
-      you open a place that has one.</li>
-  <li><strong>Anthropic</strong> (<code>api.anthropic.com</code>), only if you add your own API key and
-      use the Assistant. Your question and relevant context are sent under your own account.</li>
-  <li><strong>Apple CloudKit</strong>, for Friends: your username, who you are connected to, and, only if you turn it on, your position while you are on campus.</li>
+  <li><strong>Not linked to your account.</strong> Events carry a random ID that the app creates
+      for analytics on your phone. It isn't your username, your account ID, or your UTORid, and
+      we don't connect it to them.</li>
+  <li><strong>Device details.</strong> The PostHog software adds standard details to each event:
+      app version, iOS version, device type (phone or tablet), screen size, language and time
+      zone. It doesn't send your device's name or any advertising identifier.</li>
+  <li><strong>No location, ever.</strong> A filter in the app removes any location-like value
+      from every event before it's sent, including events PostHog's own software creates. The app
+      also tells PostHog not to work out your location from your IP address. PostHog's servers
+      still see the IP address a request comes from, as every server does.</li>
+  <li><strong>Never your Feed activity.</strong> What you do in the Feed is recorded only by
+      Skeeto's own server, as described above. It never goes to PostHog.</li>
+  <li>There is no crash reporter, no session recording or screen replay, and no advertising or
+      data-broker software of any kind.</li>
 </ul>
 
-<h2>Friends</h2>
+<h3 id="device">Technical data</h3>
+<p>Like any online service, Skeeto's server providers keep short-term technical logs of the
+requests your phone makes, such as the IP address, the time and the kind of request. They are
+used for security and to fix problems. Skeeto's own server code logs IDs and outcomes, not the
+text or images you post.</p>
 
-<p>Friends is built on Apple's CloudKit, under your own iCloud account. There is no server
-belonging to the developer anywhere in it. Two different things are stored in two different
-places, and the difference is the important part:</p>
+<h3 id="location">Location</h3>
+<p><strong>Skeeto doesn't send your location anywhere</strong>, not to its server, not to
+analytics, and not to other students. Your location is used only on your phone, and only if you
+allow it:</p>
+<ul>
+  <li>to show where you are on the campus map;</li>
+  <li>to estimate how long the walk to your next class will take;</li>
+  <li>for walking directions you start yourself. While a walk is running, the app follows your
+      location in the background, including when the screen is locked, so the directions on your
+      Lock Screen stay up to date. iOS shows its location indicator the whole time. Following
+      stops when you arrive or end the walk.</li>
+</ul>
+<p>Skeeto has no feature that shares your location with friends. If one is added, it will be
+off until you turn it on, and this policy will be updated before it ships.</p>
+<p>The map is drawn by Apple Maps, which loads map images from Apple under Apple's own privacy
+policy.</p>
+
+<h3 id="uoft">U of T sign-in</h3>
+<ul>
+  <li><strong>Your UTORid password never reaches Skeeto.</strong> You sign in on U of T's own
+      login page, which is shown inside the app and served by U of T over an encrypted
+      connection. The app doesn't read what you type there, and it doesn't store or send your
+      password.</li>
+  <li>After you sign in, the app keeps the <strong>session cookies</strong> on your phone, the same
+      way a browser does. They are sent only to U of T.</li>
+  <li>The app uses that session to read your timetable, program and year from ACORN. It does this
+      on your phone, through ACORN's own pages.</li>
+  <li>To connect Quercus, it creates a <strong>Quercus access token</strong> named "Skeeto app" on
+      your U of T account. The token is stored in your iPhone's Keychain and sent only to Quercus
+      (<code>q.utoronto.ca</code>). If you paste in a Quercus calendar feed link instead, that is
+      also kept in the Keychain.</li>
+  <li>Your phone also looks up course codes in U of T's public course timetable. These lookups
+      don't identify you.</li>
+</ul>
+<p>Skeeto doesn't send anything about you to U of T. Your phone talks to U of T's services
+directly, as you would in a browser. U of T sees that activity under its own policies.</p>
+
+<h2 id="phone">3. What stays only on your phone</h2>
+
+<p>These things never reach Skeeto's server, with or without an account:</p>
+<ul>
+  <li>your UTORid password (the app never has it), your U of T session cookies, and your Quercus
+      access token or calendar feed link;</li>
+  <li>your full timetable for every term (only this term's courses, sections, program and year
+      are uploaded, and only with an account);</li>
+  <li>assignments, due dates, <strong>grades</strong>, submission status and course weights from
+      Quercus;</li>
+  <li>exams, habits, your parked car and EV charging timer, the waitlist watcher, groups you keep
+      only for comparing weeks (a list of usernames kept only on your phone; group chats are stored
+      on the server, as described above), and your appearance settings;</li>
+  <li>the sample week, if you try it: a made-up timetable, assignments and exam that exist only on
+      your phone and are never uploaded, even with an account;</li>
+  <li>reminders and notifications, which are scheduled on your phone (Skeeto doesn't use push
+      notifications);</li>
+  <li>Lock Screen and Live Activity cards, and walking routes;</li>
+  <li>your location (see <a href="#location">Location</a>);</li>
+  <li>your analytics on/off setting and the random analytics ID.</li>
+</ul>
+
+<h2 id="use">4. How it is used</h2>
+
+<p>Skeeto uses your information only to run Skeeto:</p>
+<ul>
+  <li><strong>To provide the app:</strong> your account and profile, posts, comments, messages,
+      Friends and shared timetables, communities and search.</li>
+  <li><strong>To personalise your Feed.</strong> Posts are ranked using your Feed activity, who you
+      follow, the communities you're in, your friends' reposts, and your courses and program. Your
+      courses are turned into a "course profile" using U of T's public course descriptions. Your
+      activity is combined into a "taste profile". Posts are also given a profile of their own from
+      their text and images. Posts that match your profiles rank higher.</li>
+  <li><strong>To improve the recommendations.</strong> Your Feed activity may be used to train
+      Skeeto's recommendation model, which learns what kinds of posts people engage with. The model
+      stores learned patterns, not copies of anyone's records. Training only ever uses records that
+      still exist.</li>
+  <li><strong>To keep the Feed safe:</strong> the automated checks and human review described in
+      the next section, enforcing the <a href="terms.html">terms</a>, and stopping people who were
+      banned from coming back under a new account.</li>
+  <li><strong>To understand which features are used</strong>, through the anonymous analytics
+      described above.</li>
+  <li><strong>To reply to you</strong> when you write to us.</li>
+</ul>
+
+<div class="note">
+<p><strong>Your courses, program and year aren't optional.</strong> If you have an account, they
+personalise your Feed, add you to your course communities, and show on your profile. There is no
+switch to turn this off. The Account tab shows what is used, under <strong>Courses &amp;
+program</strong>. If you don't want your courses used this way, you can use Skeeto without an
+account, or delete your account. Your timetable, assignments and reminders work the same either
+way. You can leave any course community, and you won't be added back to it unless a later import
+finds that course as new.</p>
+</div>
+
+<p>Your information isn't sold, rented or traded. It isn't used for advertising, and it isn't
+used for any purpose not listed here unless you agree to that first.</p>
+
+<h2 id="moderation">5. Automated moderation and human review</h2>
+
+<p>Skeeto checks content automatically before and after it is posted, and a person reviews what is
+reported.</p>
+
+<ul>
+  <li><strong>A list of blocked words</strong> is checked the moment you post or save posts,
+      comments, links, profile fields, and community names and descriptions. A match is refused.</li>
+  <li><strong>A text model</strong> reads posts, comments, profile text (username, display name,
+      bio, program and social handles) and community names and descriptions. Text it rates as
+      highly sexually explicit or severely toxic is removed. For a profile, the username and
+      display name are replaced with a neutral one, and the bio, program and handles are cleared.
+      Text checks never give a strike.</li>
+  <li><strong>Every image</strong> (in posts, in comments, and community icons) is checked by an
+      image model before anyone else can see it. An image the first check is unsure about is
+      <strong>held</strong>. Only you can see it until a second, stronger model decides. If that
+      model rates the image as clearly explicit, the image is removed and your account gets a
+      <strong>strike</strong>. If it rates it as somewhat explicit, the image is removed with no
+      strike.</li>
+  <li><strong>Strikes:</strong> a strike closes the Feed to you for 7 days. A third strike ends
+      posting and commenting permanently.</li>
+</ul>
+
+<div class="note">
+<p><strong>Automated decisions.</strong> A strike from the image check is made automatically,
+without a person looking first. You can ask for any automated decision to be reviewed by a
+person, and tell us why you think it was wrong, by writing to
+<a href="mailto:lucasnadon3132@gmail.com">lucasnadon3132@gmail.com</a>. The developer can restore
+removed content and reverse strikes.</p>
+</div>
+
+<p><strong>Reports.</strong> You can report any post, comment, profile or community, and you can
+report a person from a chat. Reports aren't anonymous to the developer, and the person you
+report isn't told who reported them. If three different people report the same post, comment or
+student-created community, it is hidden until it's reviewed. Each report and each strike is emailed to the
+developer through <strong>Resend</strong>, an email delivery service. A report email includes
+both usernames, the reason given, and up to 500 characters of the reported text. It never
+includes an image.</p>
+
+<p><strong>Human review.</strong> The developer reviews reports and can remove content, give or
+reverse strikes, and ban accounts. To do this he can look at reported, held and removed content,
+including images. <strong>Community creators</strong> can remove posts, comments and members in
+the communities they created. Messages aren't scanned automatically, but you can report or block
+the person you're talking to at any time.</p>
+
+<p><strong>Blocking</strong> hides the other person from you everywhere, and you from them: the
+Feed, comments, reposts, search, profiles and messages. It also ends any connection, and any
+follow either way, between you.</p>
+
+<h2 id="sharing">6. Who sees it, and who it is shared with</h2>
+
+<h3 id="visibility">Other students</h3>
+<div class="wrap">
+<table>
+  <tr><th>What</th><th>Who can see it</th></tr>
+  <tr><td>Your profile: username, display name, bio, social handles, photo, program, year, join date, follower and following counts</td><td>Anyone signed in to Skeeto, except people you've blocked</td></tr>
+  <tr><td>Which courses you take, through your membership of each course's community (your sections aren't shown)</td><td>Anyone signed in, on that community's member list, until you leave it</td></tr>
+  <tr><td>Other communities you're in, who you follow, and who follows you</td><td>Anyone signed in, except people you've blocked</td></tr>
+  <tr><td>Posts and comments in a community, and their images</td><td>Anyone signed in</td></tr>
+  <tr><td>Posts in the Friends community, and your reposts</td><td>Only people you've promoted to friend</td></tr>
+  <tr><td>Likes</td><td>Counts are public; who liked something isn't</td></tr>
+  <tr><td>Your week, times only</td><td>Your connections (people whose friend request you accepted, or who accepted yours)</td></tr>
+  <tr><td>Your week in full: courses, sections, rooms and times</td><td>Only people you've promoted to friend</td></tr>
+  <tr><td>Messages, and when you last read a conversation</td><td>The other person in the conversation</td></tr>
+  <tr><td>Your email, enrolment record, Feed activity, stickers, "Not interested" choices, blocks, reports and moderation record</td><td>Only you and the developer (you can't see the Feed activity record itself, or other people's reports)</td></tr>
+</table>
+</div>
+
+<div class="note">
+<p><strong>The developer can see everything on the server</strong>, including your messages and
+your enrolment. Nothing is end-to-end encrypted. He only looks at it to run Skeeto: for
+moderation, to fix problems, and to answer your requests.</p>
+</div>
+
+<h3 id="processors">Service providers</h3>
+<p>Skeeto uses these companies to run. They handle your information on Skeeto's behalf and for no
+other purpose:</p>
+<div class="wrap">
+<table>
+  <tr><th>Provider</th><th>What it does</th><th>Where</th></tr>
+  <tr><td><strong>Supabase</strong></td><td>Skeeto's server: the database, accounts and sign-in (including sending email sign-in codes), photo storage, and small server programs for the automated checks, search, report emails and account deletion</td><td>Canada (Montréal, on Amazon Web Services). See <a href="#where">Where it is stored</a> for the server programs</td></tr>
+  <tr><td><strong>Modal</strong></td><td>Rented computers that run the second image check on held images, and work out the post and taste profiles behind your Feed. Each job reads what it needs, computes, and returns only the result</td><td>United States</td></tr>
+  <tr><td><strong>PostHog</strong></td><td>Anonymous usage analytics, unless you turn it off</td><td>United States</td></tr>
+  <tr><td><strong>Resend</strong></td><td>Delivers report and strike emails to the developer</td><td>United States</td></tr>
+  <tr><td><strong>Google (Gmail)</strong></td><td>The developer's mailbox, which receives report and strike emails and anything you email to support</td><td>Google's data centres, which may be outside Canada</td></tr>
+  <tr><td><strong>Apple</strong> and <strong>Google</strong></td><td>Sign-in, if you choose Sign in with Apple or Google. Apple also provides Apple Maps</td><td>Under their own privacy policies</td></tr>
+</table>
+</div>
+
+<p>The recommendation model is trained on a computer the developer owns. When it is trained on
+Skeeto's Feed records, those records are copied to that computer. The same computer can also run
+the second image check and the Feed's profile computations that Modal normally runs.</p>
+
+<h3 id="legal">Other disclosures</h3>
+<p>We may disclose information if the law requires it, or if we believe in good faith that
+disclosing it is needed to protect someone from serious harm. If Skeeto is ever transferred to
+someone else, your information would go with it only under this policy, and you would be told
+first.</p>
+
+<p><strong>Skeeto doesn't sell your information. It doesn't share it with advertisers or data
+brokers, doesn't show ads, and doesn't track you across other companies' apps or websites.</strong></p>
+
+<h2 id="where">7. Where it is stored and processed</h2>
+
+<ul>
+  <li><strong>Skeeto's database and photo storage</strong> are in Canada, in Supabase's Montréal
+      region.</li>
+  <li><strong>Supabase's server programs</strong> run the automated text and image checks, search,
+      report emails and account deletion. Supabase normally runs them in the data centre closest
+      to the request. Account deletion is always run in Montréal. The others usually run in
+      Canada, but Supabase doesn't guarantee it, so they may run in another region, such as the
+      United States.</li>
+  <li><strong>In the United States:</strong> held images and the Feed's profiles (Modal),
+      analytics (PostHog), and report and strike emails (Resend). The developer's mailbox is
+      Gmail.</li>
+</ul>
+<p>Information processed outside Canada is subject to the laws of that country, and may be
+accessible to its courts and authorities.</p>
+
+<h2 id="retention">8. How long it is kept</h2>
 
 <div class="wrap">
 <table>
-  <tr><th>What</th><th>Where</th><th>Who can read it</th></tr>
-  <tr><td>Your profile: username, name, photo, bio, and who you are connected to</td><td>CloudKit's <em>public</em> database</td><td>Anyone who knows your username, and the developer through Apple's CloudKit dashboard</td></tr>
-  <tr><td><strong>Your timetable</strong></td><td>Your own <em>private</em> CloudKit database</td><td>Only the friends you share it with. Not the developer</td></tr>
+  <tr><th>What</th><th>How long</th></tr>
+  <tr><td>Your account, profile, enrolment, connections, messages, posts, comments, Feed activity and moderation record</td><td>As long as your account exists. There's no automatic deletion schedule yet</td></tr>
+  <tr><td>A post or comment you delete</td><td>Hidden from everyone at once. The stored copy is erased when your account is deleted</td></tr>
+  <tr><td>A message you delete</td><td>Its text is erased at once; a "deleted" marker stays in the conversation. Editing a message replaces the old text</td></tr>
+  <tr><td>The ranking behind one Feed session</td><td>About 2 days</td></tr>
+  <tr><td>Feed search text</td><td>Not kept</td></tr>
+  <tr><td>Report and strike emails</td><td>In the developer's mailbox until he deletes them</td></tr>
+  <tr><td>Analytics events</td><td>Kept by PostHog under the developer's PostHog account. They aren't linked to your account, so deleting your account doesn't delete them</td></tr>
+  <tr><td>Server backups and technical logs</td><td>Kept by Supabase for a limited time, then overwritten</td></tr>
 </table>
 </div>
 
-<p>Sharing uses Apple's own sharing mechanism: your schedule stays in your private database,
-and each friend is named on it individually by Apple. Someone who is not on the list cannot
-read it, that is enforced by Apple, not by this app being careful.</p>
+<h3 id="deletion">When you delete your account</h3>
+<p>In the app, go to <strong>Account &rarr; Delete account</strong>. This permanently deletes your
+account, profile, posts, comments, photos, reposts, likes, follows, stickers, "Not
+interested" choices, community memberships, messages (from both sides of each conversation),
+enrolment, shared timetables, connections, blocks, Feed activity, taste profile and terms record.
+Other people's comments on your posts, and replies under your comments, go with them. Communities
+you created stay up without you. Replies elsewhere that were addressed to you stay, but they're
+no longer linked to your account.</p>
 
-<div class="note">
-<p><strong>What is still visible to the developer:</strong> your chosen handle and your
-friend list. Not your schedule, not your classes, not where you are. The handle is not
-anonymous if you pick your own name for it, and none of it is end-to-end encrypted.
-It is not sold, analysed, or used for anything, but "the developer cannot see any of it"
-would be untrue, so it is not claimed.</p>
-</div>
-
-<p><strong>Your profile is public.</strong> The name, photo and one-line bio you choose are
-visible to anyone who knows your username, and to the developer. That is what they are for:
-a handle with no face is a hard thing to trust before you share your week with it. Leave them
-blank and the app shows your initials instead. Your timetable and your location are not part
-of your profile and are never public.</p>
-
-<p><strong>Reporting.</strong> If someone's photo or bio is offensive, impersonates someone,
-or is spam, you can report it from their profile. Reports are not anonymous to the developer
-and are not shown to the person reported. Removing someone cuts off everything you share with
-them immediately.</p>
-
-<p>Within Friends:</p>
+<p>Some things are kept after deletion, <strong>for moderation and safety only</strong>:</p>
 <ul>
-  <li>You choose a username. It is a handle you pick, not your UTORid, and not your legal name unless you make it one.</li>
-  <li>New friends see <strong>busy times only</strong>, when you are free, with no course names or rooms, unless you deliberately promote them to see your full timetable. The two versions are stored separately; a busy-only friend is not shown a filtered copy of the full one, they are given a different record that never had the course names in it.</li>
-  <li>Removing a friend, or reducing what they can see, takes them off that share. Their access ends there and then, at Apple's level.</li>
-  <li>If you never use Friends, none of this data is ever created.</li>
+  <li><strong>If you had strikes or a ban</strong>, a record of them is kept. It is stored with a
+      one-way scrambled (hashed) form of your email address and of your Apple or Google sign-in
+      ID, so that signing up again with the same email or the same Apple or Google account brings
+      the strikes and ban back. The hashes can't be turned back into your email address. There's
+      no end date for this record.</li>
+  <li><strong>Content that was removed, hidden by reports, or under an open report</strong> when you
+      deleted your account is copied for review. That includes its text, link and images, and, for
+      a reported profile, its last version. Images still waiting for the second image check are
+      also kept. These copies aren't shown to anyone. There's no fixed date yet for deleting them.</li>
+  <li><strong>Reports you made</strong> are kept without your name on them. Reports about you are
+      kept without being linked to your account.</li>
 </ul>
 
-<h2>Location</h2>
+<p>If the app says deletion isn't available, nothing has been deleted. Email
+<a href="mailto:lucasnadon3132@gmail.com">lucasnadon3132@gmail.com</a> from the address your
+account uses, or include your username, and the developer will delete the same things by hand.</p>
 
-<p>Location does two different things in this app, and only one of them ever leaves your
-phone.</p>
+<p>Your timetable, assignments and other on-phone data stay on your phone until you delete the
+app. Some Keychain items can survive deleting and reinstalling the app.</p>
 
-<p><strong>On the map, and for walking times.</strong> Showing where you are on the campus map
-and working out the real walk to your next class both happen entirely on your device. Nothing
-about that is transmitted, to the developer or to anyone else. Refuse the permission and the
-rest of the app works normally.</p>
-
-<p><strong>Sharing your location with friends.</strong> This is off until you turn it on, and
-it is the only thing in this app that sends your position anywhere.</p>
-
-<div class="note">
-<p><strong>If you turn location sharing on:</strong></p>
+<p>Two things are outside Skeeto, and you remove them yourself:</p>
 <ul>
-  <li><strong>Only the friends you pick.</strong> Nobody can see you until you select them by
-      name, one at a time. Turning someone off takes effect immediately, and they are not told.</li>
-  <li><strong>Only while you're on campus.</strong> Your phone works out whether you're on
-      campus before anything is sent. Off campus, nothing is transmitted at all, and what was
-      previously shared is <em>deleted</em>, not hidden. Your friends see "not on campus", not
-      the spot where you left.</li>
-  <li><strong>Your position, and the building you're in.</strong> Friends you have chosen see
-      where you are on the campus map, labelled with the building you're in when you're in one.
-      This is a precise position, it is meant for finding each other, and it is why it only
-      works on campus, only for people you name, and only while you leave it switched on.</li>
-  <li><strong>No history is kept.</strong> There is one current position per person, overwritten
-      each time it updates and dropped after two hours. There is no trail of where you have
-      been, not on your phone, not in the cloud, and not available to the developer, because
-      it is never recorded in the first place.</li>
-  <li><strong>As you move, roughly every 50 metres.</strong> Enough to tell one building from
-      the next. This uses battery while it is switched on, which is part of why it is off by
-      default and why turning it off stops the app using location in the background at all.</li>
-  <li><strong>Turning it off is one switch</strong>, at the top of Friends &rarr; My location,
-      and it stops sharing straight away.</li>
-</ul>
-<p>Your position is stored in Apple's CloudKit while it is being shared. Friends you have
-selected can read it; it is deleted when you leave campus, pause sharing, or two hours pass.</p>
-</div>
-
-<p>This app is not a location tracker and is not designed to be used as one. It will not show
-where someone lives, where they work, or where they were yesterday, because it does not collect
-any of that.</p>
-
-<h2>Analytics and tracking</h2>
-
-<p>There are none. No analytics SDK, no crash reporter, no advertising identifier, no
-third-party trackers, and no profile of you anywhere. The app does not track you across apps
-or websites.</p>
-
-<h2>Age</h2>
-
-<p>Oakhall is intended for university students. It is not directed at children and does
-not knowingly collect information from them.</p>
-
-<p><strong>Location sharing is for students 18 and over.</strong> By turning it on you
-confirm you are 18 or older. This is a condition of use, not something the app checks. We do
-not ask your age and we do not ask for identification, and we would rather say so plainly
-than imply a verification that does not happen.</p>
-
-<p>Everything else in the app, your timetable, assignments, the campus map, Eats, the
-waitlist watcher and your friends list, works the same at any age.</p>
-
-<h2>Deleting your data</h2>
-
-<p>In the app: <strong>Account &amp; Privacy → Erase all my data</strong>. It removes every
-saved credential, your timetable, assignments, watchlist, friends data and all scheduled
-reminders, and signs you out of U of T.</p>
-
-<p>Deleting the app removes its files, but <em>keychain items can survive a reinstall</em>, so
-use Erase first if that matters to you.</p>
-
-<p>Two things live outside the app and must be removed separately:</p>
-<ul>
-  <li><strong>The Quercus access token.</strong> It is registered on your U of T account. Remove it at
-      Quercus → Account → Settings → Approved Integrations, where it appears as "Oakhall app".</li>
-  <li><strong>Friends data in CloudKit.</strong> Removing your friends and signing out clears what the
-      app wrote. Your schedule lives in your own iCloud account, so deleting the app's data in
-      <strong>Settings → [your name] → iCloud → Manage Account Storage</strong> removes it too.
-      To have any remainder in the public database deleted, contact the address below.</li>
+  <li><strong>The Quercus access token.</strong> It's registered on your U of T account. Remove it
+      in Quercus at Account &rarr; Settings &rarr; Approved Integrations, where it's called
+      "Skeeto app" (or "Oakhall app" if you connected before September 2026).</li>
+  <li><strong>Friends data from Oakhall, before September 2026.</strong> Oakhall stored Friends in
+      Apple's iCloud (CloudKit). Your copy is in your own iCloud account. Remove it in
+      <strong>Settings &rarr; [your name] &rarr; iCloud &rarr; Manage Account Storage</strong>. To
+      have anything left in the shared database deleted, email us.</li>
 </ul>
 
-<h2>Changes</h2>
+<h2 id="rights">9. Your choices and rights</h2>
 
-<p>If this policy changes in a way that affects what is collected or where it goes, the date at
-the top changes and the change is described in the app's release notes.</p>
+<h3>Choices in the app</h3>
+<ul>
+  <li><strong>Analytics:</strong> Account &rarr; Privacy &rarr; Help improve Skeeto.</li>
+  <li><strong>Location, photos and camera:</strong> allow or refuse them in iOS Settings &rarr;
+      Skeeto. Everything else in the app works without them.</li>
+  <li><strong>Your profile:</strong> edit or clear your display name, bio and social handles at any
+      time. Your program and year follow your ACORN import.</li>
+  <li><strong>Your week:</strong> connections see only your busy times. You choose who you promote
+      to friend, and only they see your full timetable. Reducing someone back to connection, or
+      removing them, takes effect immediately. There's no separate switch yet to take your shared
+      week off the server. Deleting your account removes it.</li>
+  <li><strong>Course communities:</strong> leave any of them to come off their member lists.</li>
+  <li><strong>Your content:</strong> delete your posts, comments and messages, unfollow, leave
+      communities, and block people.</li>
+  <li><strong>Your account:</strong> delete it in the app, as described above.</li>
+</ul>
+
+<h3>Your rights</h3>
+<p>You have the right to:</p>
+<ul>
+  <li>ask what personal information Skeeto holds about you, and get a copy of it;</li>
+  <li>ask for it to be corrected if it's wrong;</li>
+  <li>have it deleted;</li>
+  <li>withdraw your consent to a use, though some uses are part of having an account, so
+      withdrawing means deleting the account;</li>
+  <li>ask for an automated decision to be reviewed by a person;</li>
+  <li>in Quebec, ask for your information in a structured, commonly used format.</li>
+</ul>
+<p>There's no in-app export yet, so email
+<a href="mailto:lucasnadon3132@gmail.com">lucasnadon3132@gmail.com</a> for any of these. We may
+need to confirm that the account is yours. We'll answer within 30 days.</p>
+<p>If you aren't satisfied with our answer, you can complain to the
+<a href="https://www.priv.gc.ca/">Office of the Privacy Commissioner of Canada</a>. In Quebec, you
+can complain to the <a href="https://www.cai.gouv.qc.ca/">Commission d'accès à
+l'information</a>. You can also complain to your own province's privacy regulator.</p>
+
+<h2 id="security">10. Security</h2>
+<ul>
+  <li>All connections between the app and Skeeto's server, U of T, and the services above are
+      encrypted.</li>
+  <li>The database enforces who can read what, row by row. The app can't read anything the rules
+      don't allow, even if the app itself had a bug.</li>
+  <li>Photos are kept in private storage. They're only served to someone signed in who is allowed
+      to see the post, comment or community they belong to.</li>
+  <li>Your Quercus token is kept in the iPhone Keychain. Server keys never ship in the app. The
+      rented computers on Modal sign in to the database with a restricted account that can only
+      reach what they need.</li>
+</ul>
+<p>No system is perfectly secure. Remember that messages aren't end-to-end encrypted. If a breach
+puts your information at real risk of serious harm, we'll tell you, and the regulators, as the law
+requires.</p>
+
+<h2 id="children">11. Children</h2>
+<p>Skeeto is made for university students. It isn't directed at children, and we don't knowingly
+collect information from children under 13. <strong>You must be at least 13 to create a Skeeto
+account</strong>. If you live in Quebec and are under 14, you need a parent's or guardian's
+consent. The app doesn't ask your age or check it. If you believe a child under 13 (or a child
+under 14 in Quebec, without consent) has an account, email us and we'll delete it.</p>
+<p>The timetable, assignments, campus map and food information work without an account, at any
+age.</p>
+
+<h2 id="changes">12. Changes to this policy</h2>
+<p>If we change what Skeeto collects, why, or where it goes, we'll update this page and the date
+at the top before the change takes effect. We'll describe the change in the app's release notes.
+If a change needs your consent, such as a new use of information already collected, we'll ask in
+the app first.</p>
+
+<h2 id="contact">13. Contact</h2>
+<p>Questions, requests, appeals and complaints go to Lucas Nadon, who is responsible for privacy at
+Skeeto: <a href="mailto:lucasnadon3132@gmail.com">lucasnadon3132@gmail.com</a>.</p>
 
 <footer>
-  <p><strong>Contact:</strong> <a href="mailto:lucasnadon3132@gmail.com">lucasnadon3132@gmail.com</a></p>
-  <p>Campus map data © OpenStreetMap contributors, and campus information from
-     map.utoronto.ca. Oakhall is an independent project and is not affiliated with the
-     University of Toronto.</p>
+  <p><strong>Contact:</strong> <a href="mailto:lucasnadon3132@gmail.com">lucasnadon3132@gmail.com</a>
+     &middot; <a href="terms.html">Terms of Use</a> &middot; <a href="support.html">Support</a></p>
+  <p>Campus map data &copy; OpenStreetMap contributors, and campus information from
+     map.utoronto.ca. Skeeto is an independent project, operated by Lucas Nadon, and is not
+     affiliated with the University of Toronto.</p>
 </footer>
 
 </main>
